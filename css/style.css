@@ -1,0 +1,74 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: green;
+  /* margin: 0 auto; */
+}
+span {
+  font-size: 5rem;
+  font-weight: 550;
+  line-height: 1.5;
+}
+div {
+  display: flex;
+  gap: 10px;
+}
+
+.images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+img{
+  display: block;
+  width: 30vh;
+  object-fit: cover;
+  height: 30vh;
+ 
+  /* height:30vh; */
+  /* float: left; */
+}
+
+
+
+
+
+
+
+#indoor {
+  display: none;
+  /* height: 337px; */
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

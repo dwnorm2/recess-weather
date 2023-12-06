@@ -9,7 +9,7 @@ function weather() {
 
   return new Promise((resolve, reject) => {
     fetch(
-      `http://dataservice.accuweather.com/currentconditions/v1/332667?apikey=${apiKey}&language=en-US&details=true`
+      `https://dataservice.accuweather.com/currentconditions/v1/332667?apikey=${apiKey}&language=en-US&details=true`
     )
       .then((response) => {
         if (!response.ok) {

@@ -12,8 +12,6 @@ html {
   font-size: 62.5%;
 }
 
-
-
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -26,7 +24,6 @@ body {
   padding: 20px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   background-color: green;
-  /* margin: 0 auto; */
 }
 span {
   font-size: 5rem;
@@ -52,23 +49,8 @@ img{
   width: 30vh;
   object-fit: cover;
   height: 30vh;
- 
-  /* height:30vh; */
-  /* float: left; */
 }
-
-
-
-
-
-
 
 #indoor {
   display: none;
-  /* height: 337px; */
-
 }
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/

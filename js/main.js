@@ -7,7 +7,7 @@ let realFeel, precipitation;
 
 // Fetch weather data and update the DOM
 function fetchWeather() {
-  const apiKey = 'FTr7D9KwDJzIbFpLNTVAJyWnAhMMfb4H';
+  const apiKey = "FTr7D9KwDJzIbFpLNTVAJyWnAhMMfb4H";
   const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/332667?apikey=${apiKey}&language=en-US&details=true`;
 
   return fetch(apiUrl)
@@ -34,30 +34,32 @@ function fetchWeather() {
 // Update the DOM with weather information
 function updateDOM(data) {
   document.getElementById(
-    'temp'
+    "temp"
   ).textContent = `${data.Temperature.Imperial.Value}f`;
-  document.getElementById('precipitation').textContent = data.HasPrecipitation;
-  document.getElementById('RealFeel').textContent = `${
+  document.getElementById("precipitation").textContent = data.HasPrecipitation;
+  document.getElementById("RealFeel").textContent = `${
     data.RealFeelTemperature.Imperial.Value
-  }f (${data.RealFeelTemperature.Imperial.Phrase.toLowerCase()})`;
+  }f (${data.RealFeelTemperature.Imperial.Phrase.toLowerCase()})${
+    data.RealFeelTemperature.Imperial.Value < 60 ? "🧥" : ""
+  }`;
 }
 
 // Apply weather conditions to the UI
 function applyWeatherConditions({ realFeel, precipitation }) {
-  let body = document.querySelector('body');
-  let playgroundImg = document.getElementById('outdoor');
-  let classroomImg = document.getElementById('indoor');
+  let body = document.querySelector("body");
+  let playgroundImg = document.getElementById("outdoor");
+  let classroomImg = document.getElementById("indoor");
 
   if (realFeel >= 90 || realFeel < 30) {
-    body.style.backgroundColor = 'yellow';
-    classroomImg.style.display = 'block';
-    playgroundImg.style.display = 'block';
+    body.style.backgroundColor = "yellow";
+    classroomImg.style.display = "block";
+    playgroundImg.style.display = "block";
   }
 
   if (precipitation === true || realFeel < 9 || realFeel > 95) {
-    body.style.backgroundColor = 'red';
-    playgroundImg.style.display = 'none';
-    classroomImg.style.display = 'block';
+    body.style.backgroundColor = "red";
+    playgroundImg.style.display = "none";
+    classroomImg.style.display = "block";
   }
 }
 
@@ -65,5 +67,5 @@ function applyWeatherConditions({ realFeel, precipitation }) {
 fetchWeather()
   .then(applyWeatherConditions)
   .catch((error) => {
-    console.error('Error:', error);
+    console.error("Error:", error);
   });
